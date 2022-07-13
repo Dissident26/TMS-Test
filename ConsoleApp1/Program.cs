@@ -8,6 +8,7 @@ namespace ConsoleApp1
         {
             string name = String.Empty;
             int age = 0;
+            int height = 0;
 
             Console.WriteLine("press any key to continue");
 
@@ -17,6 +18,7 @@ namespace ConsoleApp1
             {
                 Console.WriteLine("press 1 to enter name");
                 Console.WriteLine("press 2 to enter age");
+                Console.WriteLine("press 3 to enter height");
                 Console.WriteLine("press 'P' to print result");
                 Console.WriteLine("press 'Escape' to exit");
 
@@ -49,8 +51,22 @@ namespace ConsoleApp1
                             Console.WriteLine("******************");
                             Console.WriteLine("Name: {0}", name);
                             Console.WriteLine("Age: {0}", age);
+                            Console.WriteLine("Height: {0}", height);
                             Console.WriteLine("******************");
 
+                            break;
+                        }
+                        case ConsoleKey.D3:
+                        {
+                            Console.WriteLine("Enter your height: ");
+                            string input = Console.ReadLine();
+                            bool isValid = int.TryParse(input, out var number);
+                            if (!isValid)
+                            {
+                                Console.WriteLine("Invalid input!");
+                            }
+
+                            height = number;
                             break;
                         }
                     default:
